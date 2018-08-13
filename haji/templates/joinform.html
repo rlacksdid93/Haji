@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입</title>
+    <script>
+        function check(){
+            if(form1.id.value==""){
+                alert("ID을 입력해 주세요!");
+                form1.id.focus();
+                return;
+            }   
+            if(form1.name.value==""){
+                alert("이름을 입력해 주세요!");
+                form1.name.focus();
+                return;
+            }
+            if(form1.pwd.value==""){
+                alert("비밀번호를 입력해 주세요!");
+                form1.pwd.focus();
+                return;
+            }
+            form1.submit()
+        } 
+    </script>
+</head>
+<body>
+    <h1>회원 정보 입력</h1>
+    
+    <form action="/join" method="POST" name="form1">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <td><input type="text" name="id"></td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" name="pwd"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="가입" onclick="check()">
+                <input type="reset" value="취소">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
