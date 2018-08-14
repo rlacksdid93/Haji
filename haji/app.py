@@ -15,7 +15,8 @@ def index():
 
 @app.route('/homeform')
 def homeform():
-    return render_template('homeform.html')
+    id=session['id']
+    return render_template('homeform.html', id=id)
    
 
 
@@ -28,7 +29,7 @@ def home():
     if torf == True : # 로그인 정보 맞음
         session['id'] = id
         return render_template('homeform.html', id=id)
-    else : return "<script>alert('비밀번호가 틀려서 되돌아갑니다!');history.back();</script>"
+    else : return "<script>alert('아이디 또는 비밀번호가 틀립니다!');history.back();</script>"
 
 
 @app.route("/joinform")   # id, pwd, name 입력받는 페이지
@@ -46,23 +47,29 @@ def join():
     return redirect('/homeform')
 
 
-# @app.route('/loginform')
-# def loginform():
-#     return render_template('loginform.html')
+@app.route("/member_addi_infoform")
+def member_addi_infoform():
+    id=session['id']
+    return render_template('member_addi_infoform.html', id=id)
 
 
-# @app.route('/login', methods=["POST"])
-# def login():
-#     id = request.form['id']
-#     pwd = request.form['pwd']
-#     data = (id, pwd)
-#     if dbMgr.login(data) == True : return redirect('/home')
-#     else : return "<script>alert('비밀번호가 틀려서 되돌아갑니다!');history.back();</script>"
+@app.route("/member_addi_info" , methods=["POST"])
+def member_addi_info():
+    id=request.form['id']
+    pwd=request.form['pwd']
+    age = request.form['age']
+    sex = request.form['sex']
+    m_type = request.form['m_type']
+    m_trouble = request.form['m_trouble']
+    used_prod = request.form['used_prod']
+    data = (age, sex, m_type, m_trouble, used_prod, id, pwd)
+    dbMgr.member_addi_info(data)
+    return redirect('/homeform')
 
 
-@app.route('/login_errform')
-def login_errfrom():
-    return render_template(login_errfrom.html)
+# @app.route('/login_errform')
+# def login_errfrom():
+#     return render_template(login_errfrom.html)
 
     
 

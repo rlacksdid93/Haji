@@ -23,31 +23,30 @@
 </head>
 <body>
     {% if id %}   {#<!--로그인 성공시-->#}
-    <h1>로그인 성공 </h1> 
+        <h1>로그인 성공 </h1>
+        <a href="/member_addi_infoform">회원정보추가</a> 
     {% else %}
-    <h1>Ha JI </h1> 
-    <h1>회원 정보 입력</h1>
-    <form action="/home" method="POST" name="form1">
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <td><input type="text" name="id"></td>
-        </tr>
-        <tr>
-            <th>비밀번호</th>
-            <td><input type="password" name="pwd"></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="button" value="로그인" onclick="check()">
-            </td>
-        </tr>
-    </table>
-    </form>
+        <h1>Ha JI </h1> 
+        <h1>회원 정보 입력</h1>
+        <form action="/home" method="POST" name="form1">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="로그인" onclick="check()">
+                </td>
+            </tr>
+        </table>
+        </form>
 
-    <a href="/joinform">회원가입</a>
-
-    
+        <a href="/joinform">회원가입</a>
     
     {% endif %}
     </body>

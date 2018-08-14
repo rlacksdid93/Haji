@@ -31,7 +31,7 @@ def member_addi_info(data):
             update member 
             set age=%s, sex=%s, m_type=%s , 
             m_trouble=%s , used_prod=%s 
-            where m_num=%s and pwd=%s
+            where id=%s and pwd=%s
         """
         result = cursor.execute(sql, data)   # data로 sql의 %s부분 채워서 실행.
         cursor.close()
@@ -80,10 +80,10 @@ if __name__ == '__main__':
     # print(result)
 
     # test : member_addi_info()
-    # data = ('20', '여', '건성', '여드름', 'YYY 클렌징 오일', 4, '1234')
-    # result = member_addi_info(data)
-    # print(result)
+    data = ('20', '여', '건성', '여드름', 'YYY 클렌징 오일', 11, '1234')
+    result = member_addi_info(data)
+    print(result)
 
     # test : login
-    data = ('ttotto', '1234')
-    login(data)
+    # data = ('ping', '1234')
+    # login(data)
