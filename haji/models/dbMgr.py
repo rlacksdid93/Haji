@@ -42,6 +42,7 @@ def member_addi_info(data):
 
 
 def login(data):
+    result = None
     try:
         conn = getConnection()   # 연결 객체. DB연결
         cursor = conn.cursor()
@@ -52,13 +53,14 @@ def login(data):
         cursor.execute(sql2, db_m_num)   # data로 sql의 %s부분 채워서 실행.
         db_pwd = cursor.fetchone()['pwd']
         if db_pwd==data[1]:
-            print ("True")
-        else : print("Flase")
+           result = True
+        else : result = False
         cursor.close()
     except Exception as e:   # 예외상황(프로그래머가 컨트롤해줘야 하는 상황) 발생 / cf.에러 : 프로그래머가 컨트롤 할 수 없는 상황
         print('login err===========', e)
     finally : conn.close()
-    return    # 정상 : 1리턴 / 비정상 : 0리턴
+    return result
+
 
 
 
