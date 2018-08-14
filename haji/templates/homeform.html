@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Haji</title>
+    <script>
+        function check(){
+            if(form1.id.value==""){
+                alert("ID을 입력해 주세요!");
+                form1.id.focus();
+                return;
+            }   
+            if(form1.pwd.value==""){
+                alert("비밀번호를 입력해 주세요!");
+                form1.pwd.focus();
+                return;
+            }
+            form1.submit()
+        } 
+    </script>
+</head>
+<body>
+    {% if id %}   {#<!--로그인 성공시-->#}
+    <h1>로그인 성공 </h1> 
+    {% else %}
+    <h1>Ha JI </h1> 
+    <h1>회원 정보 입력</h1>
+    <form action="/home" method="POST" name="form1">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <td><input type="text" name="id"></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" name="pwd"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="로그인" onclick="check()">
+            </td>
+        </tr>
+    </table>
+    </form>
+
+    <a href="/joinform">회원가입</a>
+
+    
+    
+    {% endif %}
+    </body>
+</html>
