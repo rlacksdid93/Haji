@@ -4,7 +4,7 @@ import pymysql
 
 
 def getConnection():   # 연결하는 함수
-    conn = pymysql.connect(host='localhost', port=3306, user='root', password='1234', db='haji', charset='utf8', autocommit=True, cursorclass=pymysql.cursors.DictCursor)   # 자동으로 commit, 자동으로 dict의 형태로 변환.
+    conn = pymysql.connect(host='localhost', port=3306, user='root', password='1253', db='haji', charset='utf8', autocommit=True, cursorclass=pymysql.cursors.DictCursor)   # 자동으로 commit, 자동으로 dict의 형태로 변환.
     return conn
 
 
@@ -60,16 +60,6 @@ def login(data):
         print('login err===========', e)
     finally : conn.close()
     return result
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     # pass
