@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입</title>
+    <script>
+        function check() {
+            // alert('aaaa');
+            if(form1.names.value == "") {
+                alert("아이디를 꼭 입력해주세요!!!");
+                form1.names.focus();
+                return;
+            }
+            
+            if(form1.age.value == "") {
+                alert("나이를 꼭 입력해주세요!!!");
+                if(form1.age.value==<str>)
+                {
+                    alert("나이를 숫자로 입력해주세요!!")
+                }
+                form1.age.focus();
+                return;
+            }
+            if(form1.pwd.value == "") {
+                alert("비밀번호를 꼭 입력해주세요!!!");
+                form1.pwd.focus();
+                return;
+            }
+            form1.submit()
+            alert("회원가입이 완료되었습니다.")
+        }// 자바스크립트 주석
+    </script>
+</head>
+<body>
+    <h1>회원가입 남기기</h1>
+    <form action="/write" method="POST" name="form1">
+    <table border="1" style="width: 30em;">
+        <tr>
+            <th>아이디</th>
+            <td><input type="text" name="names"></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" name="pwd"></td>
+        </tr>
+        
+        <tr>
+            <th>나이</th>
+            <td><input type="text" name="age"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="확인" onclick="check()">
+                <input type="reset" value="취소">
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

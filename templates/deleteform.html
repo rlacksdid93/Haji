@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시판 삭제</title>
+    <script>
+        function check(){
+            if(form1.pwd.value =="")
+            { 
+                alert("비밀번호를 꼭 입력하세요!")
+                form1.pwd.focus();
+                return;
+            }
+        
+        form1.submit();
+    }
+    </script>
+</head>
+<body>
+    <h1>게시판삭제</h1>
+    <a href="list>"리스트</a><br>
+    <form action="delete" method="post" name= "form1">
+        <input type="hidden" name="num" value="{{num}}">
+        비밀번호 : <input type="password"
+        name="pwd"><br>
+        <input type="button" value="삭제" onclick="check()">
+        <input type="button" value="취소">
+    </form>
+
+
+
+
+    </form>
+
+
+
+</body>
+</html>

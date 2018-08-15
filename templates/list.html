@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원가입 리스트</title>
+</head>
+<body>
+    <h1>게시판 리스트</h1>
+    <table border="1" style="width: 40em;">
+        <tr>
+            <th>번호</th>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>나이</th>
+            <th>가입날짜</th>
+        </tr>
+        {% for r in rows %}
+        <tr>
+            <td>{{r.num}}</td>
+            <td>{{r.name}}</td>
+            <td>{{r.pwd}}</td>
+            <td>{{r.age}}</td>
+            <td>{{r.regdate}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

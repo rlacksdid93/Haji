@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시판 읽기</title>
+    <script>
+        function go_update() {
+            location.href="/updateform/{{row.num}}"
+        }
+        function go_delete() {
+            location.href="/deleteform/{{row.num}}"
+        }
+        function go_comment() {
+            location.href="/commentform/{{row.num}}"
+        }
+    </script>
+</head>
+<body>
+    <h1>게시판 읽기</h1>
+    <a href="/list">리스트</a><br>
+    <table border="1" style="width: 30em;">
+        <tr>
+            <th>제목</th>
+            <td>{{row.title}}</td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td>{{row.content}}</td>
+        </tr>
+        <tr>
+            <th>글쓴이</th>
+            <td>{{row.name}}</td>
+        </tr>
+        <tr>
+            <th>조회수</th>
+            <td>{{row.hit}}</td>
+        </tr>
+        <tr>
+            <th>날짜</th>
+            <td>{{row.regdate}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" value="수정" onclick="go_update()">
+                <input type="button" value="삭제" onclick="go_delete()">
+                <input type="button" value="댓글" onclick="go_comment()">
+                
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

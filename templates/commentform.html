@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>댓글 쓰기</title>
+    <script>
+        function check(){
+            if (form1.name.value==""){
+                alert("이름을 꼭 입력하세요");
+                form1.name.focus()  
+                return;
+            }
+            if (form1.content.value==""){
+                alert("내용을 꼭 입력하세요");
+                form1.content.focus()  
+                return;
+            }
+            form1.submit();
+        }
+    </script>
+
+
+
+</head>
+
+
+
+<body>
+    <h1<>댓글 쓰기</h1>
+    <a href="/list">리스트</a><br><br>
+    <form action="/comment" method="POSt" name="form1">
+        <table border="1" style="width:30em">
+        <tr>
+            <th>이름</th>
+            <td><input type="text" name="c_name"></td>
+            <td><input type="text" name="name"</td>
+        </tr>
+        <tr>
+            <th>내용</th>
+            <td><input type="hidden" name="num" value="{{num}}"></td>
+        </tr>
+
+
+    </tr>
+
+
+
+</body>
+</html>
